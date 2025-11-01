@@ -56,10 +56,10 @@ export default function PaymentModal({
 	const createPaymentIntent = async () => {
 		try {
 			const res = await fetch(
-				"http://localhost:8001/api/payment/create-payment-intent",
+				`${import.meta.env.VITE_BACKEND_SERVER}/payment/create-payment-intent`,
 				{
 					method: "POST",
-					credentials: "include", // if you use cookies for auth
+					credentials: "include",
 					headers: {
 						"Content-Type": "application/json",
 					},
