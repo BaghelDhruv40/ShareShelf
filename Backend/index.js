@@ -13,7 +13,7 @@ connectDB();
 
 app.use(
 	cors({
-		origin: "https://share-shelf-chi.vercel.app/",
+		origin: "https://share-shelf-chi.vercel.app",
 		credentials: true,
 	})
 );
