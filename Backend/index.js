@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config();
+import cors from "cors";
 import express from "express";
 import connectDB from "./config/db.js";
 import cookieParser from "cookie-parser";
@@ -5,9 +8,6 @@ import authRoute from "./routes/auth.js";
 import resourcesRoute from "./routes/resources.js";
 import paymentRoute from "./routes/payment.js";
 
-import cors from "cors";
-import dotenv from "dotenv";
-dotenv.config();
 const app = express();
 connectDB();
 

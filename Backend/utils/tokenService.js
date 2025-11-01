@@ -1,10 +1,11 @@
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+dotenv.config();
 
 const ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET;
 const REFRESH_TOKEN_SECRET = process.env.REFRESH_TOKEN_SECRET;
-const ID_TOKEN_SECRET = process.env.ID_TOKEN_SECRET;
 import RefreshToken from "../models/RefreshToken.js";
-// ACCESS TOKEN: short life, used for authorization
+
 export function createAccessToken(user) {
 	const payload = {
 		user,
@@ -13,7 +14,6 @@ export function createAccessToken(user) {
 	return jwt.sign(payload, ACCESS_TOKEN_SECRET, { expiresIn: "15m" });
 }
 
-// REFRESH TOKEN: long life, used to get new access tokens
 export async function createRotatingRefreshToken(userId) {
 	try {
 		const token = jwt.sign({ userId }, REFRESH_TOKEN_SECRET, {
@@ -32,7 +32,6 @@ export async function createRotatingRefreshToken(userId) {
 	}
 }
 
-// VERIFY FUNCTIONS — safer than directly using jwt.verify in routes
 export function verifyAccessToken(token) {
 	return jwt.verify(token, ACCESS_TOKEN_SECRET);
 }
