@@ -1,4 +1,4 @@
-import { uploadOnCloudinary } from "../utils/Cloudinary.js";
+import { uploadOnCloudinary } from "../utils/cloudinary.js";
 import Resource from "../models/Resource.js";
 
 const getResources = async (req, res) => {

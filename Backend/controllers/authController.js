@@ -1,5 +1,5 @@
 import User from "../models/User.js";
-import { uploadOnCloudinary } from "../utils/Cloudinary.js";
+import { uploadOnCloudinary } from "../utils/cloudinary.js";
 import jwt from "jsonwebtoken";
 import RefreshToken from "../models/RefreshToken.js";
 
