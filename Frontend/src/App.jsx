@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import AuthForm from "./components/AuthForm/AuthForm";
 import axios from "axios";
-import Content from "./pages/Content/Content";
+import Content from "./pages/Content";
 import UserProfile from "./components/UserProfile/UserProfile";
 
 function App() {
